@@ -44,3 +44,6 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+
+def post_list(request):
+    return render(request,'app/post_list.html')
