@@ -1,11 +1,32 @@
-﻿{% extends "app/layout.html" %}
+﻿
+{% extends "app/layout.html" %}
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
+{% block content %}
+
 <body>
 
+
+ <div>
+
+
+<h1 > My posts </h1>
+
+{% for post in posts %}
+    
+    <h2><a href="{% url 'post_details' pk=post.pk %}">{{ post.title }}</a></h2>
+    <p>{{ post.text|linebreaksbr }}</p>
+    <p>{{post.published_date|linebreaksbr }}</p>
+
+{% endfor %}
+
+
+</div>
+   
 </body>
-</html>
+
+{% endblock %}
+
+
+<footer>
+  <p>&copy; {{ year }} - My Django Application</p>
+</footer>

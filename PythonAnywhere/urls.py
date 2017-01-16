@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
     url (r'^post$', app.views.post_list, name='post'),
+    url(r'^post_details/(?P<pk>\d+)/$', app.views.post_details, name='post_details'),
     url(r'^login/$',
         django.contrib.auth.views.login,
         {
